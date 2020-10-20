@@ -29,8 +29,8 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-		authenticationMgr.inMemoryAuthentication().withUser("admin").password("admin").authorities("ROLE_USER").and()
-				.withUser("javainuse").password("javainuse").authorities("ROLE_USER", "ROLE_ADMIN");
+		authenticationMgr.inMemoryAuthentication().withUser("admin").password("{noop}admin").authorities("ROLE_USER").and()
+				.withUser("javainuse").password("{noop}javainuse").authorities("ROLE_USER", "ROLE_ADMIN");
 	}
 
 }
